@@ -1,4 +1,4 @@
-# title(){return this.options.title||this.options.name}
+# A Vanilla 🍨 JavaScript carousel for practice 🧑🏻‍💻
 
 Quick start:
 
