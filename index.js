@@ -10,7 +10,7 @@ document.getElementById('stop-btn').addEventListener('click', stopCarousel);
 
 let itemsToRender = ''
 for (let i = 0; i < slides.length; i++) {
-    itemsToRender += `<li><span class="dot">${[i + 1]}</span></li>`;
+    itemsToRender += `<li id="dot-0${[i + 1]}"><span class="dot">${[i + 1]}</span></li>`;
 }
 carouselItems.innerHTML = itemsToRender
 
