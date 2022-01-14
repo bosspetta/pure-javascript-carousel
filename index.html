@@ -1,24 +1,32 @@
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="carousel">
-            <div class="carousel-item carousel-item-visible">
-                <img src="images/1.jpg" />
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <div class="carousel-item carousel-item-visible">
+                    <img src="images/1.jpg" alt="Carousel image"/>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/2.jpg" alt="Carousel image"/>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/3.jpg" alt="Carousel image"/>
+                </div>
+                
+                <div class="carousel-actions">
+                    <button id="carousel-button-prev" aria-label="Previous Slidex"><</button>
+                    <button id="carousel-button-next" aria-label="Next Slide">></button>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="images/2.jpg" />
-            </div>
-            <div class="carousel-item">
-                <img src="images/3.jpg" />
-            </div>
-            
-            <div class="carousel-actions">
-                <button id="carousel-button-prev" aria-label="Previous Slidex"><</button>
-                <button id="carousel-button-next" aria-label="Next Slide">></button>
-            </div>
+            <p>
+                <button class="btn" id="autoplay-btn">Autoplay</button>
+                <button class="btn" id="stop-btn">Stop carousel</button>
+            </p>
         </div>
+        <!-- /.carousel-wrapper -->
     
         <script src="index.pack.js"></script>
     </body>

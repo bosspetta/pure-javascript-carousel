@@ -74,11 +74,13 @@
 
 
 var slides = document.getElementsByClassName('carousel-item');
-var slidePosition = 0;
 var totalSlides = slides.length;
+var slidePosition = 0;
 
 document.getElementById('carousel-button-next').addEventListener('click', moveToNextSlide);
 document.getElementById('carousel-button-prev').addEventListener('click', moveToPrevSlide);
+document.getElementById('autoplay-btn').addEventListener('click', autoPlay);
+document.getElementById('stop-btn').addEventListener('click', stopCarousel);
 
 function hideAllSlides() {
     var _iteratorNormalCompletion = true;
@@ -130,6 +132,20 @@ function moveToPrevSlide() {
     }
 
     slides[slidePosition].classList.add("carousel-item-visible");
+}
+
+var transitionSlides = '';
+
+function autoPlay() {
+    console.log('Play please!');
+    transitionSlides = setInterval(function () {
+        moveToNextSlide();
+    }, 5000);
+}
+
+function stopCarousel() {
+    clearInterval(transitionSlides);
+    console.log('Stop please!');
 }
 
 /***/ })

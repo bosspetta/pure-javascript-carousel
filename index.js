@@ -1,9 +1,11 @@
 const slides = document.getElementsByClassName('carousel-item');
-let slidePosition = 0;
 const totalSlides = slides.length;
+let slidePosition = 0;
 
 document.getElementById('carousel-button-next').addEventListener('click', moveToNextSlide);
 document.getElementById('carousel-button-prev').addEventListener('click', moveToPrevSlide);
+document.getElementById('autoplay-btn').addEventListener('click', autoPlay);
+document.getElementById('stop-btn').addEventListener('click', stopCarousel);
 
 function hideAllSlides() {
     for (let slide of slides) {
@@ -35,3 +37,18 @@ function moveToPrevSlide() {
     
     slides[slidePosition].classList.add("carousel-item-visible");
 }
+
+let transitionSlides = ''
+
+function autoPlay() {
+    console.log('Play please!');
+    transitionSlides = setInterval(() => {
+      moveToNextSlide();
+    }, 5000);
+}
+
+function stopCarousel() {
+    clearInterval(transitionSlides);
+    console.log('Stop please!');
+}
+
