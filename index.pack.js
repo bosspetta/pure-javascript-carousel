@@ -73,6 +73,7 @@
 "use strict";
 
 
+var carouselItems = document.getElementById('carousel-items');
 var slides = document.getElementsByClassName('carousel-item');
 var totalSlides = slides.length;
 var slidePosition = 0;
@@ -81,6 +82,12 @@ document.getElementById('carousel-button-next').addEventListener('click', moveTo
 document.getElementById('carousel-button-prev').addEventListener('click', moveToPrevSlide);
 document.getElementById('autoplay-btn').addEventListener('click', autoPlay);
 document.getElementById('stop-btn').addEventListener('click', stopCarousel);
+
+var itemsToRender = '';
+for (var i = 0; i < slides.length; i++) {
+    itemsToRender += '<li><span class="dot">' + [i + 1] + '</span></li>';
+}
+carouselItems.innerHTML = itemsToRender;
 
 function hideAllSlides() {
     var _iteratorNormalCompletion = true;

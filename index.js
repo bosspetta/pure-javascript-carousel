@@ -1,3 +1,4 @@
+const carouselItems = document.getElementById('carousel-items');
 const slides = document.getElementsByClassName('carousel-item');
 const totalSlides = slides.length;
 let slidePosition = 0;
@@ -6,6 +7,12 @@ document.getElementById('carousel-button-next').addEventListener('click', moveTo
 document.getElementById('carousel-button-prev').addEventListener('click', moveToPrevSlide);
 document.getElementById('autoplay-btn').addEventListener('click', autoPlay);
 document.getElementById('stop-btn').addEventListener('click', stopCarousel);
+
+let itemsToRender = ''
+for (let i = 0; i < slides.length; i++) {
+    itemsToRender += `<li><span class="dot">${[i + 1]}</span></li>`;
+}
+carouselItems.innerHTML = itemsToRender
 
 function hideAllSlides() {
     for (let slide of slides) {
