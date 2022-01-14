@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;1,300;1,700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     background-color: lightcyan;
@@ -25,6 +29,10 @@ body {
     display: none;
 }
 
+.carousel .carousel-item {
+    position: relative;
+}
+
 .carousel .carousel-item-visible {
     display: block;
     animation: fadeVisibility 0.5s;
@@ -34,6 +42,16 @@ body {
     width: 100%;
     max-width: 600px;
     height: auto;
+}
+
+.carousel-item__title {
+    position: absolute;
+    background-color: rgba(0,0,0,.875);
+    color: white;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    padding: 10px 20px;
 }
 
 .carousel .carousel-actions {
