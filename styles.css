@@ -64,27 +64,40 @@ body {
 }
 
 .carousel .carousel-actions button {
-    border-radius: 50px;
-    background-color: white;
-    border: 0;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
+    border: none;
+    width: 24px;
+    height: 24px;
+    text-indent: -9999px;
+    border-radius: 12px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .carousel .carousel-actions button#carousel-button-prev {
     margin-left: 20px;
+    background: rgba(255,255,255,.75) url('./images/ico-prev.svg') center center no-repeat;
+    background-size: 70% auto;
 }
 
 .carousel .carousel-actions button#carousel-button-next {
-    margin-right: 20px;   
+    margin-right: 20px;
+    margin-left: 20px;
+    background: rgba(255,255,255,.75) url('./images/ico-next.svg') center center no-repeat;
+    background-size: 70% auto;
+}
+
+.carousel .carousel-actions button#carousel-button-prev:hover,
+.carousel .carousel-actions button#carousel-button-prev:focus,
+.carousel .carousel-actions button#carousel-button-next:hover,
+.carousel .carousel-actions button#carousel-button-next:focus {
+    background-color: white;
 }
 
 #carousel-items {
     position: absolute;
-    top: -50px;
+    top: -30px;
     right: 0;
     list-style: none;
     padding: 0;
@@ -100,18 +113,18 @@ body {
 #carousel-items li span {
   display: block;
   background-color: rgba(0,0,0,.25);
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   margin: 0 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   text-indent: -9999px;
 }
 
 #carousel-items li.current-slide span {
-  background-color: black;
-  width: 25px;
-  height: 25px;
-  border-radius: 20px;
+  background-color: lightseagreen;
+  width: 15px;
+  height: 15px;
+  border-radius: 7.5px;
 }
 
 .carousel-wrapper {
