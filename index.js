@@ -8,11 +8,19 @@ document.getElementById('carousel-button-prev').addEventListener('click', moveTo
 document.getElementById('autoplay-btn').addEventListener('click', autoPlay);
 document.getElementById('stop-btn').addEventListener('click', stopCarousel);
 
-let itemsToRender = ''
-for (let i = 0; i < slides.length; i++) {
-    itemsToRender += `<li id="dot-0${[i + 1]}"><span class="dot">${[i + 1]}</span></li>`;
+function slideDots() {
+    let itemsToRender = ''
+    for (let i = 0; i < slides.length; i++) {
+        if (slides[i].classList.contains('carousel-item-visible')) {
+            itemsToRender += `<li id="dot-0${[i + 1]}" class="current-slide"><span class="dot">${[i + 1]}</span></li>`;
+        } else {
+            itemsToRender += `<li id="dot-0${[i + 1]}"><span class="dot">${[i + 1]}</span></li>`;
+        }
+    }
+    carouselItems.innerHTML = itemsToRender
 }
-carouselItems.innerHTML = itemsToRender
+
+slideDots()
 
 function hideAllSlides() {
     for (let slide of slides) {
@@ -31,6 +39,7 @@ function moveToNextSlide() {
     }
     
     slides[slidePosition].classList.add("carousel-item-visible");
+    slideDots();
 }
 
 function moveToPrevSlide() {
@@ -43,6 +52,7 @@ function moveToPrevSlide() {
     }
     
     slides[slidePosition].classList.add("carousel-item-visible");
+    slideDots();
 }
 
 let transitionSlides = ''
